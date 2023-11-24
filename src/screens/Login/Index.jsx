@@ -108,9 +108,9 @@ const Login = () => {
             value={userId}
             onChange={handleUserIdChange}
           /> */}
-          <button type="button" onClick={handleClearStorage}>
+          {/* <button type="button" onClick={handleClearStorage}>
             Limpar SessionStorage
-          </button> 
+          </button>  */}
         </div>
       </form>
     </body>

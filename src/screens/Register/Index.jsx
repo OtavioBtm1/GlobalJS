@@ -29,34 +29,42 @@ export function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (senha !== confirmarSenha) {
       console.error('As senhas não coincidem.');
       return;
     }
-
+  
     const newUser = {
       name: name,
       email: email,
       senha: senha,
-      id: usersData.users.length + 1,  
     };
-
-    usersData.users.push(newUser);  
-
+  
     try {
-     
-      
-       
-      const usersFromStorage = JSON.parse(sessionStorage.getItem('users')) || [];
-      usersFromStorage.push(newUser);
-      sessionStorage.setItem('users', JSON.stringify(usersFromStorage));
-
-      console.log('Usuário registrado localmente com sucesso.');
-
-      navigate('/');
+      const response = await fetch('http://localhost:3000/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newUser),
+      });
+  
+      if (response.ok) {
+        console.log('Usuário registrado no servidor com sucesso.');
+  
+        const usersFromStorage = JSON.parse(sessionStorage.getItem('users')) || [];
+        usersFromStorage.push(newUser);
+        sessionStorage.setItem('users', JSON.stringify(usersFromStorage));
+  
+        console.log('Usuário registrado localmente com sucesso.');
+  
+        navigate('/');
+      } else {
+        console.error('Erro ao registrar usuário no servidor.');
+      }
     } catch (error) {
-      console.error('Erro ao salvar o usuário:', error);
+      console.error('Erro ao conectar com a API:', error);
     }
   };
 
