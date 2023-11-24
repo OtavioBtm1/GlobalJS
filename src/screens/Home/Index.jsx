@@ -34,10 +34,13 @@ const Home = () => {
         </div>
         <h3>MediCare</h3>
         <div className="content">
-          <h1>Bem-vindo!</h1>
-          {userData && (
-            <p>Nome: {userData.name} Email: {userData.email}</p>
-          )}
+          <header>
+          <div className="user-info">  
+            {userData && (
+              <p>Nome: {userData.name} | Email: {userData.email}</p>
+            )}
+          </div>
+          </header>
           <div className="links">
             <Link to="/" className="logout-btn">
               Logout
@@ -52,5 +55,6 @@ const Home = () => {
     </div>
   );
 };
+
 
 export default Home;
