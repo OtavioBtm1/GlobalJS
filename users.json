@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "nome": "Administrador",
+      "email": "admin@globalsolution.com.br",
+      "senha": "adminadmin"
+    },
+    {
+      "id": 2,
+      "nome": "Otavio Vitoriano",
+      "email": "otavio@globalsolution.com.br",
+      "senha": "otavio@2023"
+    },
+    {
+      "name": "Ale",
+      "email": "bala@a",
+      "senha": "123",
+      "id": 3
+    }
+  ]
+}
