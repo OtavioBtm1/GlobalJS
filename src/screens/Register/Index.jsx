@@ -27,52 +27,43 @@ export function Register() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (senha !== confirmarSenha) {
-      console.error('As senhas não coincidem.');
-      return;
-    }
+  if (senha !== confirmarSenha) {
+    console.error('As senhas não coincidem.');
+    return;
+  }
 
-    const newUser = {
-      name: name, // Adicionando o nome ao objeto do novo usuário
-      email: email,
-      senha: senha,
-    };
-
-    // Verificar se já existem usuários no sessionStorage
-    const usersFromStorage = JSON.parse(sessionStorage.getItem('users')) || [];
-
-    // Adicionar o novo usuário à lista de usuários
-    usersFromStorage.push(newUser);
-
-    // Atualizar os usuários no sessionStorage
-    sessionStorage.setItem('users', JSON.stringify(usersFromStorage));
-
-    console.log('Usuário registrado com sucesso:', newUser);
-    console.log('Usuários salvos:', usersFromStorage);
-
-
-    try {
-      const response = await fetch(' http://localhost:3000/users', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newUser),
-      });
-  
-      if (response.ok) {
-        console.log('Usuário registrado no servidor com sucesso.');
-      } else {
-        console.error('Erro ao registrar usuário no servidor.');
-      }
-    } catch (error) {
-      console.error('Erro ao conectar com a API:', error);
-    }
-
-    navigate('/');
+  const newUser = {
+    name: name,
+    email: email,
+    senha: senha,
   };
+
+  try {
+    const response = await fetch('http://localhost:3000/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newUser),
+    });
+
+    if (response.ok) {
+      console.log('Usuário registrado no servidor com sucesso.');
+      const usersFromStorage = JSON.parse(localStorage.getItem('users')) || [];
+      usersFromStorage.push(newUser);
+      localStorage.setItem('users', JSON.stringify(usersFromStorage));
+      console.log('Usuário registrado localmente com sucesso.');
+    } else {
+      console.error('Erro ao registrar usuário no servidor.');
+    }
+  } catch (error) {
+    console.error('Erro ao conectar com a API:', error);
+  }
+
+  navigate('/');
+};
 
 
     return (

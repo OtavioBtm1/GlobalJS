@@ -102,15 +102,15 @@ const Login = () => {
           <Link to="/register" className="register-btn">
             Criar Conta
           </Link>
-          {/* <input
+           {/* <input
             type="text"
             placeholder="ID do Usuário"
             value={userId}
             onChange={handleUserIdChange}
-          />
+          /> */}
           <button type="button" onClick={handleClearStorage}>
-            Deletar Usuário
-          </button> */}
+            Limpar SessionStorage
+          </button> 
         </div>
       </form>
     </body>
