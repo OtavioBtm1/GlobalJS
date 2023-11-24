@@ -26,18 +26,23 @@ MediCare é uma plataforma médica que estabelece conexões entre pacientes e m�
 1. Verificar se está instalado o Node.js
     - Caso não esteja, instalar em https://nodejs.org/
     - Executar o instalador
-    - Após a instalação, abra o terminal (Prompt de Comando ou PowerShell) e digite node -v e npm -v para verificar se o Node.js e o gerenciador de pacotes npm foram instalados corretamente.
-2. Abrir o terminal (CTRL + ") e digitar npm install
-<pre><code>npm install</code><pre>
-3. Digitar npm run dev
+    - Após a instalação, abra o terminal (Prompt de Comando ou PowerShell) e digite `node -v` e `npm -v` para verificar se o Node.js e o gerenciador de pacotes npm foram instalados corretamente.
+2. Abrir o terminal (CTRL + ") e digitar:
+3. Para rodar:
+    ```bash
+   npm run dev
+   ```
     - Assim vai abrir um localhost onde irá mostrar o codigo funcionando, para acessar apenas colar ou CTRL + CLICK
 
-4. Digitar json-server --watch src/db/users.json
+4. Para abrir o backend e verificar: 
+  ```bash
+   json-server --watch src/db/users.json
+  ```
     - Assim irá abrir um localhost capaz de visualizar as informações de cadastro e das contas ativas
 
 ## Autores
 - Otavio Vitoriano da Silva (RM552012)
-- Jéssica Brum Fialho (RM97944)
+- Jéssica Brum Maia Filho (RM97944)
 
 ## Licence 
  - Código aberto sob a licença MIT.
