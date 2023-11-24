@@ -16,14 +16,19 @@ const Home = () => {
           const user = JSON.parse(userFromSession);
           setUserData(user);
         }
-        // Ou se quiser pegar todos os usuários
-        // setUserData(data); 
+         
       })
       .catch(error => {
         console.error('Erro ao carregar os dados dos usuários:', error);
       });
   }, []);
 
+
+
+  const handleClearStorage = () => {
+     sessionStorage.clear();
+    console.log('Session Storage foi limpo.');
+  }
   return (
     <div className="background">
       <div className="shape"></div>
@@ -42,7 +47,7 @@ const Home = () => {
           </div>
           </header>
           <div className="links">
-            <Link to="/" className="logout-btn">
+            <Link to="/" className="logout-btn"  onClick={handleClearStorage}>
               Logout
             </Link>
             <span className="divider">|</span>

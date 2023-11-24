@@ -37,14 +37,11 @@ const Login = () => {
   };
 
   const handleClearStorage = () => {
-    // Limpar sessionStorage
-    sessionStorage.clear();
+     sessionStorage.clear();
     console.log('Session Storage foi limpo.');
   
-    // Verificar se há um ID fornecido
-    if (userId) {
-      // Deletar usuário da API usando o ID fornecido
-      fetch(`http://localhost:3000/users/${userId}`, {
+     if (userId) {
+       fetch(`http://localhost:3000/users/${userId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
