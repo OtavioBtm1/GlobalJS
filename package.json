@@ -11,17 +11,19 @@
   },
   "dependencies": {
     "install": "^0.13.0",
+    "json": "^11.0.0",
     "jsonserver": "^0.1.6",
     "npm": "^10.2.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.19.0",
-    "sass": "^1.69.5"
+    "sass": "^1.69.5",
+    "server": "^1.0.38"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react": "^4.0.3",
+    "@vitejs/plugin-react": "^4.2.0",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.45.0",
     "eslint-plugin-react": "^7.32.2",
