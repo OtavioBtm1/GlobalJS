@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './style.scss';
 import { useNavigate } from 'react-router-dom';
+import usersData from '../../db/users.json';
 
 export function Register() {
   const navigate = useNavigate();
@@ -27,44 +28,37 @@ export function Register() {
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  if (senha !== confirmarSenha) {
-    console.error('As senhas não coincidem.');
-    return;
-  }
-
-  const newUser = {
-    name: name,
-    email: email,
-    senha: senha,
-  };
-
-  try {
-    const response = await fetch('http://localhost:4000/users', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newUser),
-    });
-
-    if (response.ok) {
-      console.log('Usuário registrado no servidor com sucesso.');
-      const usersFromStorage = JSON.parse(localStorage.getItem('users')) || [];
-      usersFromStorage.push(newUser);
-      localStorage.setItem('users', JSON.stringify(usersFromStorage));
-      console.log('Usuário registrado localmente com sucesso.');
-    } else {
-      console.error('Erro ao registrar usuário no servidor.');
+    if (senha !== confirmarSenha) {
+      console.error('As senhas não coincidem.');
+      return;
     }
-  } catch (error) {
-    console.error('Erro ao conectar com a API:', error);
-  }
 
-  navigate('/');
-};
+    const newUser = {
+      name: name,
+      email: email,
+      senha: senha,
+      id: usersData.users.length + 1,  
+    };
 
+    usersData.users.push(newUser);  
+
+    try {
+     
+      
+       
+      const usersFromStorage = JSON.parse(sessionStorage.getItem('users')) || [];
+      usersFromStorage.push(newUser);
+      sessionStorage.setItem('users', JSON.stringify(usersFromStorage));
+
+      console.log('Usuário registrado localmente com sucesso.');
+
+      navigate('/');
+    } catch (error) {
+      console.error('Erro ao salvar o usuário:', error);
+    }
+  };
 
     return (
       <body>
