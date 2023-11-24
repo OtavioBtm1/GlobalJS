@@ -41,7 +41,7 @@ MediCare é uma plataforma médica que estabelece conexões entre pacientes e m�
   ```bash
     json-server --watch src/db/users.json
    ```
-    - Assim irá abrir um localhost capaz de visualizar as informações de cadastro e das contas ativas
+   - Assim irá abrir um localhost capaz de visualizar as informações de cadastro e das contas ativas
 
 ## Autores
 - Otavio Vitoriano da Silva (RM552012)
