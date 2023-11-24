@@ -28,6 +28,7 @@ MediCare é uma plataforma médica que estabelece conexões entre pacientes e m�
     - Executar o instalador
     - Após a instalação, abra o terminal (Prompt de Comando ou PowerShell) e digite node -v e npm -v para verificar se o Node.js e o gerenciador de pacotes npm foram instalados corretamente.
 2. Abrir o terminal (CTRL + ") e digitar npm install
+<pre><code>npm install</code><pre>
 3. Digitar npm run dev
     - Assim vai abrir um localhost onde irá mostrar o codigo funcionando, para acessar apenas colar ou CTRL + CLICK
 
@@ -37,3 +38,6 @@ MediCare é uma plataforma médica que estabelece conexões entre pacientes e m�
 ## Autores
 - Otavio Vitoriano da Silva (RM552012)
 - Jéssica Brum Fialho (RM97944)
+
+## Licence 
+ - Código aberto sob a licença MIT.
