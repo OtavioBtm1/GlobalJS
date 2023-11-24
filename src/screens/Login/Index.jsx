@@ -44,7 +44,7 @@ const Login = () => {
     // Verificar se há um ID fornecido
     if (userId) {
       // Deletar usuário da API usando o ID fornecido
-      fetch(`http://localhost:3000/users/${userId}`, {
+      fetch(`http://localhost:4000/users/${userId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

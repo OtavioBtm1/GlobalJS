@@ -6,9 +6,9 @@ export const isAuthenticated = (email, senha) => {
   if (user) {
     console.log('Usuário encontrado para autenticação:', user.email);
     console.log('Autenticado com sucesso!');
-    return user; // Retorna o objeto do usuário encontrado
+    return user;  
   }
   
   console.log('Credenciais inválidas. Email:', email, 'Senha:', senha);
-  return null; // Se não encontrar o usuário, retorne null ou um valor indicando que a autenticação falhou
+  return null; 
 };
